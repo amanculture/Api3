@@ -26,14 +26,15 @@
         nflConnector.getSchema = function(schemaCallback) {
             var cols = [
                 { id: "id", alias: "ID", dataType: tableau.dataTypeEnum.string },
-                { id: "teamName", alias: "Team Name", dataType: tableau.dataTypeEnum.string },
-                { id: "city", alias: "City", dataType: tableau.dataTypeEnum.string },
+                { id: "uid", alias: "UID", dataType: tableau.dataTypeEnum.string },
+                { id: "slug", alias: "Slug", dataType: tableau.dataTypeEnum.string },
+                { id: "abbreviation", alias: "Abbreviation", dataType: tableau.dataTypeEnum.string },
+                { id: "displayName", alias: "DisplayName", dataType: tableau.dataTypeEnum.string },
+                { id: "shortDisplayName", alias: "ShortDisplayName", dataType: tableau.dataTypeEnum.string },
+                { id: "name", alias: "Name", dataType: tableau.dataTypeEnum.string },
                 { id: "nickname", alias: "Nickname", dataType: tableau.dataTypeEnum.string },
-                { id: "league", alias: "League", dataType: tableau.dataTypeEnum.string },
-                { id: "conference", alias: "Conference", dataType: tableau.dataTypeEnum.string },
-                { id: "division", alias: "Division", dataType: tableau.dataTypeEnum.string },
-                { id: "stadium", alias: "Stadium", dataType: tableau.dataTypeEnum.string },
-                { id: "foundationYear", alias: "Foundation Year", dataType: tableau.dataTypeEnum.string }
+                { id: "location", alias: "Location", dataType: tableau.dataTypeEnum.string },
+                { id: "color", alias: "Color", dataType: tableau.dataTypeEnum.string }
                 // Add more columns here based on the API response structure
             ];
 
@@ -71,14 +72,15 @@
                         var tableData = data.data.map(item => {
                             var row = {
                                 "id": item.id,
-                                "teamName": item.teamName,
-                                "city": item.city,
+                                "uid": item.uid,
+                                "slug": item.slug,
+                                "abbreviation": item.abbreviation,
+                                "displayName": item.displayName,
+                                "shortDisplayName": item.shortDisplayName,
+                                "name": item.name,
                                 "nickname": item.nickname,
-                                "league": item.league,
-                                "conference": item.conference,
-                                "division": item.division,
-                                "stadium": item.stadium,
-                                "foundationYear": item.foundationYear
+                                "location": item.location,
+                                "color": item.color,
                             };
                             return row;
                         });
