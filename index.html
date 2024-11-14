@@ -84,6 +84,7 @@
                         if (data.nextPage) {
                             fetchPage(data.nextPage);  // Recursively fetch the next page if it exists
                         } else {
+                            console.log("All Rows:", allRows);  // Check the data before appending to Tableau
                             table.appendRows(allRows);  // Send all rows to Tableau
                             doneCallback();
                         }
