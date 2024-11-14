@@ -69,13 +69,17 @@
 
                     if (data && data.data) {
                         var tableData = data.data.map(item => {
-                            var row = {};
-                            // Dynamically add all fields in the data to the row object
-                            for (var key in item) {
-                                if (item.hasOwnProperty(key)) {
-                                    row[key] = item[key];
-                                }
-                            }
+                            var row = {
+                                "id": item.id,
+                                "teamName": item.teamName,
+                                "city": item.city,
+                                "nickname": item.nickname,
+                                "league": item.league,
+                                "conference": item.conference,
+                                "division": item.division,
+                                "stadium": item.stadium,
+                                "foundationYear": item.foundationYear
+                            };
                             return row;
                         });
 
